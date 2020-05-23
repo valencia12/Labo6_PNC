@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiante</title>
+</head>
+<body>
+    <label>Estudiante por codigo</label><label th:text="${estudiante.codigoEstudiante}"></label>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Estado</th>
+        </thead>
+        <tr>
+            <th th:text="${estudiante.nombre}"></th>
+            <th th:text="${estudiante.apellido}"></th>
+            <th th:text="${estudiante.edad}"></th>
+            <th th:text="${estudiante.estadoDelegate}"></th>
+        </tr>
+    </table>
+    
+    <label>Computadora del estudiante: </label><label th:text="${estudiante.nombre}"></label>
+    <table>
+    	<thead>
+    		<tr>
+    			<th>Id Computadora</th>
+    			<th>Marca</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr th:each="comp : ${estudiante.computadoras}">
+    			<td th:text="${comp.codigoComputadora}"></td>
+    			<td th:text="${comp.marca}"></td>
+    	</tbody>
+    </table>
+    <br>
+    <a href="/estudiante">Regresar</a>
+</body>
+</html>
